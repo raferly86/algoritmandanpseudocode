@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Algoritma & Pseudocode - Kelas X</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+        .code-font { font-family: 'Courier New', Courier, monospace; }
+        .step-item.selected { opacity: 0.5; pointer-events: none; }
+        .tab-btn.active { border-bottom: 2px solid #3b82f6; color: #3b82f6; font-weight: 600; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="text-slate-800 antialiased">
+
+    <nav class="fixed w-full z-50 glass-card transition-all duration-300 border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <span class="text-2xl">🚀</span>
+                    <span class="font-bold text-xl text-blue-600">AlgoLearn.</span>
+                </div>
+                <div class="hidden md:flex space-x-6 text-sm font-medium text-slate-600">
+                    <a href="#intro" class="hover:text-blue-600 transition">Tujuan</a>
+                    <a href="#algoritma" class="hover:text-blue-600 transition">Algoritma</a>
+                    <a href="#pseudocode" class="hover:text-blue-600 transition">Pseudocode</a>
+                    <a href="#coding" class="hover:text-blue-600 transition">Real Code</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 max-w-4xl mx-auto px-4 sm:px-6">
+        
+        <section id="intro" class="mb-16">
+            <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 sm:p-12 text-white shadow-xl relative overflow-hidden">
+                <div class="relative z-10">
+                    <span class="bg-blue-500/30 px-3 py-1 rounded-full text-sm font-semibold tracking-wide uppercase mb-4 inline-block">Materi Informatika Kelas X</span>
+                    <h1 class="text-3xl sm:text-4xl font-bold mb-4 leading-tight">Berkenalan dengan Algoritma & Pseudocode</h1>
+                    <p class="text-blue-100 mb-8 max-w-2xl text-lg">Pernah bingung bagaimana komputer memecahkan masalah? Semuanya dimulai dari urutan langkah yang jelas! Yuk, kita pelajari bahasa rahasia di balik program komputer.</p>
+                    
+                    <div class="bg-white/10 rounded-2xl p-6 backdrop-blur-sm border border-white/20">
+                        <h3 class="font-semibold text-xl mb-3 flex items-center gap-2">🎯 Tujuan Pembelajaran Kita:</h3>
+                        <ul class="space-y-2 text-blue-50">
+                            <li class="flex items-start gap-2"><span class="text-green-300">✔</span> Menjelaskan konsep algoritma & pseudocode dengan tepat.</li>
+                            <li class="flex items-start gap-2"><span class="text-green-300">✔</span> Menganalisis masalah sederhana & menyusun langkah yang logis.</li>
+                            <li class="flex items-start gap-2"><span class="text-green-300">✔</span> Menyusun solusi dalam format pseudocode.</li>
+                            <li class="flex items-start gap-2"><span class="text-green-300">✔</span> Menghubungkan pseudocode dengan bahasa pemrograman nyata.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Decor -->
+                <div class="absolute -bottom-10 -right-10 text-9xl opacity-10 rotate-12">💻</div>
+            </div>
+        </section>
+
+        <section id="algoritma" class="mb-16 scroll-mt-24">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="bg-amber-100 p-3 rounded-xl text-amber-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
+                <h2 class="text-2xl font-bold">1. Apa itu Algoritma?</h2>
+            </div>
+            
+            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 mb-6">
+                <p class="text-slate-600 mb-4 text-lg">
+                    Bayangkan kamu sedang membuat <strong>Mie Instan</strong>. Apakah kamu memasukkan bumbu dulu ke panci kosong, lalu merebus air, lalu menyalakan kompor? Tentu tidak, kan? Pasti mie-nya gagal total! 🍜
+                </p>
+                <p class="text-slate-600 mb-4 text-lg">
+                    <strong>Algoritma</strong> adalah urutan langkah-langkah yang <strong>logis (masuk akal)</strong> dan <strong>runtut (berurutan)</strong> untuk menyelesaikan suatu masalah. Manusia pakai algoritma setiap hari tanpa sadar, dan komputer sangat membutuhkannya karena komputer tidak bisa berpikir sendiri!
+                </p>
+            </div>
+
+            <!-- Interactive Game 1: Sorting Algorithm -->
+            <div class="bg-indigo-50 p-6 md:p-8 rounded-2xl border border-indigo-100">
+                <h3 class="font-bold text-indigo-900 text-lg mb-2">🎮 Tantangan 1: Menganalisis Masalah</h3>
+                <p class="text-indigo-700 mb-4 text-sm">Bantu Budi menyusun urutan yang logis untuk membuat Mie Instan. Klik langkah di bawah ini secara berurutan!</p>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Source List -->
+                    <div>
+                        <h4 class="font-semibold text-slate-700 mb-3 text-sm">Pilihan Langkah (Klik berurutan):</h4>
+                        <div id="source-steps" class="flex flex-col gap-2">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                    <!-- Target List -->
+                    <div>
+                        <h4 class="font-semibold text-slate-700 mb-3 text-sm">Urutan Algoritmamu:</h4>
+                        <div id="target-steps" class="flex flex-col gap-2 min-h-[200px] bg-white p-4 rounded-xl border-2 border-dashed border-indigo-200">
+                            <p id="empty-state" class="text-slate-400 text-center text-sm italic mt-4">Belum ada langkah yang dipilih.</p>
+                        </div>
+                        <div class="mt-4 flex gap-2">
+                            <button onclick="checkAlgorithm()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition shadow-sm">Cek Jawaban</button>
+                            <button onclick="resetAlgorithm()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-4 py-2 rounded-lg text-sm font-semibold transition">Ulangi</button>
+                        </div>
+                        <p id="algo-feedback" class="mt-3 text-sm font-medium hidden"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pseudocode" class="mb-16 scroll-mt-24">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="bg-emerald-100 p-3 rounded-xl text-emerald-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg></div>
+                <h2 class="text-2xl font-bold">2. Mengenal Pseudocode</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <h3 class="font-bold text-lg mb-3">Apa itu Pseudocode? 📝</h3>
+                    <p class="text-slate-600">
+                        <em>Pseudo</em> artinya "semu/palsu", dan <em>Code</em> artinya "kode". Jadi, <strong>Pseudocode</strong> adalah kode palsu yang mirip bahasa pemrograman, tapi menggunakan bahasa manusia (Inggris/Indonesia).
+                    </p>
+                    <p class="text-slate-600 mt-2">
+                        Tujuannya agar programmer bisa fokus menyusun "logika" program tanpa pusing memikirkan titik-koma (syntax) dari bahasa pemrograman asli.
+                    </p>
+                </div>
+                <div class="bg-slate-800 text-slate-300 p-6 rounded-2xl shadow-sm border border-slate-700">
+                    <h3 class="font-bold text-lg mb-3 text-white">Kata Kunci Umum</h3>
+                    <ul class="space-y-2 text-sm code-font">
+                        <li><span class="text-pink-400 font-bold">INPUT/READ</span> : Membaca data</li>
+                        <li><span class="text-pink-400 font-bold">OUTPUT/PRINT</span> : Menampilkan hasil</li>
+                        <li><span class="text-pink-400 font-bold">IF - THEN - ELSE</span> : Percabangan (Kondisi)</li>
+                        <li><span class="text-pink-400 font-bold">FOR / WHILE</span> : Perulangan</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Example Analysis & Construction -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+                <div class="bg-slate-50 border-b border-slate-100 p-4">
+                    <h3 class="font-bold text-slate-800">Contoh Kasus: Program Cek Kelulusan Siswa 🎓</h3>
+                    <p class="text-sm text-slate-500">Jika nilai lebih dari 75 maka "Lulus", selain itu "Remedial".</p>
+                </div>
+                <div class="p-0 grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+                    <div class="p-6">
+                        <h4 class="font-semibold text-slate-700 mb-3 flex items-center gap-2"><span class="bg-slate-200 w-6 h-6 flex items-center justify-center rounded-full text-xs">1</span> Algoritma (Bahasa Sehari-hari)</h4>
+                        <ol class="list-decimal list-inside space-y-2 text-slate-600 text-sm ml-2">
+                            <li>Minta pengguna memasukkan nilai siswa.</li>
+                            <li>Cek apakah nilai tersebut lebih besar dari 75.</li>
+                            <li>Jika iya, tampilkan pesan "Lulus".</li>
+                            <li>Jika tidak, tampilkan pesan "Remedial".</li>
+                            <li>Selesai.</li>
+                        </ol>
+                    </div>
+                    <div class="p-6 bg-slate-50">
+                        <h4 class="font-semibold text-slate-700 mb-3 flex items-center gap-2"><span class="bg-blue-200 text-blue-800 w-6 h-6 flex items-center justify-center rounded-full text-xs">2</span> Pseudocode</h4>
+                        <pre class="bg-slate-800 text-green-300 p-4 rounded-xl text-sm overflow-x-auto code-font">
+<span class="text-pink-400">INPUT</span> nilai
+<span class="text-pink-400">IF</span> nilai > 75 <span class="text-pink-400">THEN</span>
+    <span class="text-blue-300">PRINT</span> "Lulus"
+<span class="text-pink-400">ELSE</span>
+    <span class="text-blue-300">PRINT</span> "Remedial"
+<span class="text-pink-400">ENDIF</span></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Game 2: Luas Persegi Panjang -->
+            <div class="bg-teal-50 p-6 md:p-8 rounded-2xl border border-teal-100 mt-8">
+                <h3 class="font-bold text-teal-900 text-lg mb-2">🎮 Tantangan 2: Menghitung Luas Persegi Panjang</h3>
+                <p class="text-teal-700 mb-4 text-sm">Mari kita buat Pseudocode untuk menghitung luas persegi panjang (Luas = panjang × lebar). Ingat, komputer harus tahu dulu angkanya sebelum bisa berhitung. Klik baris kode secara berurutan!</p>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold text-slate-700 mb-3 text-sm">Pilihan Baris Kode:</h4>
+                        <div id="source-steps-2" class="flex flex-col gap-2"></div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-slate-700 mb-3 text-sm">Pseudocode Kamu:</h4>
+                        <div id="target-steps-2" class="flex flex-col gap-2 min-h-[200px] bg-white p-4 rounded-xl border-2 border-dashed border-teal-200">
+                            <p id="empty-state-2" class="text-slate-400 text-center text-sm italic mt-4">Belum ada baris kode yang dipilih.</p>
+                        </div>
+                        <div class="mt-4 flex gap-2">
+                            <button onclick="checkAlgorithm2()" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition shadow-sm">Cek Jawaban</button>
+                            <button onclick="resetAlgorithm2()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-4 py-2 rounded-lg text-sm font-semibold transition">Ulangi</button>
+                        </div>
+                        <p id="algo-feedback-2" class="mt-3 text-sm font-medium hidden"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Game 3: Aplikasi Kasir -->
+            <div class="bg-rose-50 p-6 md:p-8 rounded-2xl border border-rose-100 mt-8">
+                <h3 class="font-bold text-rose-900 text-lg mb-2">🎮 Tantangan 3: Aplikasi Kasir (Percabangan)</h3>
+                <p class="text-rose-700 mb-4 text-sm">Sekarang tingkatkan levelmu! Buat algoritma kasir sederhana: minta total belanja, minta uang bayar. Jika uang bayar kurang, tolak transaksinya! Jika uang cukup, hitung dan tampilkan kembalian.</p>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold text-slate-700 mb-3 text-sm">Pilihan Baris Kode:</h4>
+                        <div id="source-steps-3" class="flex flex-col gap-2"></div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-slate-700 mb-3 text-sm">Pseudocode Kamu:</h4>
+                        <div id="target-steps-3" class="flex flex-col gap-2 min-h-[250px] bg-white p-4 rounded-xl border-2 border-dashed border-rose-200">
+                            <p id="empty-state-3" class="text-slate-400 text-center text-sm italic mt-4">Belum ada baris kode yang dipilih.</p>
+                        </div>
+                        <div class="mt-4 flex gap-2">
+                            <button onclick="checkAlgorithm3()" class="bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition shadow-sm">Cek Jawaban</button>
+                            <button onclick="resetAlgorithm3()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 px-4 py-2 rounded-lg text-sm font-semibold transition">Ulangi</button>
+                        </div>
+                        <p id="algo-feedback-3" class="mt-3 text-sm font-medium hidden"></p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="coding" class="mb-16 scroll-mt-24">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="bg-purple-100 p-3 rounded-xl text-purple-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg></div>
+                <h2 class="text-2xl font-bold">3. Dari Pseudocode ke Bahasa Nyata</h2>
+            </div>
+            
+            <p class="text-slate-600 mb-6 text-lg">
+                Nah, mengapa kita belajar Pseudocode? Karena strukturnya sangat mirip dengan bahasa pemrograman asli (nyata). Mari kita hubungkan pseudocode cek kelulusan di atas ke dalam dua bahasa pemrograman populer: <strong>Python</strong> dan <strong>C++</strong>.
+            </p>
+
+            <div class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden">
+                <!-- Tabs Header -->
+                <div class="flex border-b border-slate-200 bg-slate-50 px-4">
+                    <button class="tab-btn active px-4 py-3 text-sm font-medium text-slate-600" onclick="switchTab('pseudo')">📝 Pseudocode</button>
+                    <button class="tab-btn px-4 py-3 text-sm font-medium text-slate-600" onclick="switchTab('python')">🐍 Python</button>
+                    <button class="tab-btn px-4 py-3 text-sm font-medium text-slate-600" onclick="switchTab('cpp')">⚙️ C++</button>
+                </div>
+                
+                <!-- Tabs Content -->
+                <div class="p-6 bg-[#1e293b]">
+                    <!-- Pseudocode Tab -->
+                    <div id="tab-pseudo" class="tab-content block code-font text-sm leading-relaxed">
+<pre class="text-slate-300">
+<span class="text-slate-500 italic">// Ini adalah rancangan sebelum diubah jadi kode asli</span>
+<span class="text-pink-400 font-bold">INPUT</span> nilai
+<span class="text-pink-400 font-bold">IF</span> nilai > 75 <span class="text-pink-400 font-bold">THEN</span>
+    <span class="text-blue-300">PRINT</span> "Lulus"
+<span class="text-pink-400 font-bold">ELSE</span>
+    <span class="text-blue-300">PRINT</span> "Remedial"
+<span class="text-pink-400 font-bold">ENDIF</span>
+</pre>
+                    </div>
+
+                    <!-- Python Tab -->
+                    <div id="tab-python" class="tab-content hidden code-font text-sm leading-relaxed">
+<pre class="text-slate-300">
+<span class="text-slate-500 italic"># Di Python, indentasi (spasi) sangat penting menggantikan ENDIF</span>
+nilai = <span class="text-yellow-200">int</span>(<span class="text-blue-300">input</span>(<span class="text-green-300">"Masukkan nilai: "</span>))
+
+<span class="text-pink-400 font-bold">if</span> nilai > <span class="text-orange-300">75</span>:
+    <span class="text-blue-300">print</span>(<span class="text-green-300">"Lulus"</span>)
+<span class="text-pink-400 font-bold">else</span>:
+    <span class="text-blue-300">print</span>(<span class="text-green-300">"Remedial"</span>)
+</pre>
+                    </div>
+
+                    <!-- C++ Tab -->
+                    <div id="tab-cpp" class="tab-content hidden code-font text-sm leading-relaxed">
+<pre class="text-slate-300">
+<span class="text-slate-500 italic">// Di C++, menggunakan kurung kurawal {} dan titik koma ;</span>
+<span class="text-pink-400 font-bold">#include</span> <span class="text-green-300">&lt;iostream&gt;</span>
+<span class="text-pink-400 font-bold">using namespace</span> std;
+
+<span class="text-blue-300">int</span> <span class="text-yellow-200">main</span>() {
+    <span class="text-blue-300">int</span> nilai;
+    cin >> nilai; <span class="text-slate-500 italic">// INPUT</span>
+    
+    <span class="text-pink-400 font-bold">if</span> (nilai > <span class="text-orange-300">75</span>) {
+        cout << <span class="text-green-300">"Lulus"</span>; <span class="text-slate-500 italic">// PRINT</span>
+    } <span class="text-pink-400 font-bold">else</span> {
+        cout << <span class="text-green-300">"Remedial"</span>;
+    }
+    
+    <span class="text-pink-400 font-bold">return</span> <span class="text-orange-300">0</span>;
+}
+</pre>
+                    </div>
+                </div>
+                <div class="bg-blue-50 p-4 text-sm text-blue-800 flex items-start gap-2">
+                    <span class="text-xl">💡</span>
+                    <p>Perhatikan! Meskipun bahasa pemrogramannya berbeda-beda (Python vs C++), <strong>logika berpikirnya (Pseudocode) tetap SAMA</strong>. Itulah pentingnya belajar logika dan pseudocode sebelum ngoding!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="mb-16">
+            <div class="bg-gradient-to-r from-teal-500 to-emerald-600 rounded-3xl p-8 sm:p-12 text-white shadow-lg text-center">
+                <h2 class="text-3xl font-bold mb-4">Uji Pemahamanmu! 🧠</h2>
+                <p class="mb-8 text-emerald-100 max-w-lg mx-auto">Mari kita cek apakah kamu sudah paham konsep Algoritma dan Pseudocode hari ini.</p>
+                
+                <!-- Quiz Container -->
+                <div id="quiz-container" class="bg-white text-slate-800 rounded-2xl p-6 md:p-8 max-w-2xl mx-auto text-left shadow-2xl">
+                    <h3 id="quiz-question" class="text-lg font-semibold mb-6">Soal 1: Manakah yang merupakan pengertian terbaik dari Algoritma?</h3>
+                    <div id="quiz-options" class="space-y-3">
+                        <!-- Options generated by JS -->
+                    </div>
+                    <div id="quiz-feedback" class="mt-6 p-4 rounded-xl hidden font-medium text-sm"></div>
+                    <div class="mt-6 flex justify-end">
+                        <button id="next-btn" onclick="nextQuestion()" class="hidden bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-lg font-semibold transition">Selanjutnya ➔</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm border-t border-slate-800">
+        <p>© 2023 - Dibuat untuk Pembelajaran Informatika Kelas X SMA.</p>
+        <p class="mt-2 text-slate-500">"Programming isn't about what you know, it's about what you can figure out."</p>
+    </footer>
+
+    <script>
+        // --- 1. Algoritma Noodle Game Logic ---
+        const correctOrder = [
+            "Siapkan panci berisi air",
+            "Rebus air hingga mendidih",
+            "Masukkan mie ke dalam air mendidih",
+            "Masukkan bumbu",
+            "Angkat dan sajikan di mangkok"
+        ];
+        
+        let shuffledSteps = [
+            "Masukkan bumbu",
+            "Siapkan panci berisi air",
+            "Angkat dan sajikan di mangkok",
+            "Masukkan mie ke dalam air mendidih",
+            "Rebus air hingga mendidih"
+        ];
+        
+        let userOrder = [];
+
+        function renderSourceSteps() {
+            const sourceContainer = document.getElementById('source-steps');
+            sourceContainer.innerHTML = '';
+            shuffledSteps.forEach((step) => {
+                if (!userOrder.includes(step)) {
+                    const btn = document.createElement('button');
+                    btn.className = "text-left w-full bg-white border border-slate-200 hover:border-indigo-400 hover:shadow-md p-3 rounded-xl text-sm text-slate-700 transition cursor-pointer flex items-center gap-2 group";
+                    btn.innerHTML = `<span class="bg-slate-100 text-slate-400 group-hover:bg-indigo-100 group-hover:text-indigo-600 px-2 py-1 rounded text-xs transition">+</span> ${step}`;
+                    btn.onclick = () => selectStep(step);
+                    sourceContainer.appendChild(btn);
+                }
+            });
+        }
+
+        function renderTargetSteps() {
+            const targetContainer = document.getElementById('target-steps');
+            
+            targetContainer.innerHTML = '';
+            if(userOrder.length === 0) {
+                targetContainer.innerHTML = '<p id="empty-state" class="text-slate-400 text-center text-sm italic mt-4">Belum ada langkah yang dipilih.</p>';
+            } else {
+                userOrder.forEach((step, index) => {
+                    const div = document.createElement('div');
+                    div.className = "bg-indigo-50 border border-indigo-200 p-3 rounded-xl text-sm text-indigo-900 flex justify-between items-center";
+                    div.innerHTML = `
+                        <div class="flex gap-3 items-center">
+                            <span class="font-bold text-indigo-400">${index + 1}.</span> ${step}
+                        </div>
+                        <button onclick="removeStep('${step}')" class="text-red-400 hover:text-red-600 text-xs px-2 py-1 rounded hover:bg-red-50 transition">✕</button>
+                    `;
+                    targetContainer.appendChild(div);
+                });
+            }
+        }
+
+        function selectStep(step) {
+            userOrder.push(step);
+            document.getElementById('algo-feedback').classList.add('hidden');
+            renderSourceSteps();
+            renderTargetSteps();
+        }
+
+        function removeStep(stepToRemove) {
+            userOrder = userOrder.filter(step => step !== stepToRemove);
+            document.getElementById('algo-feedback').classList.add('hidden');
+            renderSourceSteps();
+            renderTargetSteps();
+        }
+
+        function checkAlgorithm() {
+            const feedback = document.getElementById('algo-feedback');
+            feedback.classList.remove('hidden');
+            
+            if (userOrder.length !== correctOrder.length) {
+                feedback.className = "mt-3 text-sm font-medium text-amber-600 bg-amber-50 p-3 rounded-lg border border-amber-200";
+                feedback.innerHTML = "⚠️ Eits, belum semua langkah dipilih. Coba selesaikan dulu!";
+                return;
+            }
+
+            let isCorrect = true;
+            for (let i = 0; i < correctOrder.length; i++) {
+                if (userOrder[i] !== correctOrder[i]) {
+                    isCorrect = false;
+                    break;
+                }
+            }
+
+            if (isCorrect) {
+                feedback.className = "mt-3 text-sm font-medium text-green-700 bg-green-50 p-3 rounded-lg border border-green-200 flex items-center gap-2";
+                feedback.innerHTML = "🎉 Luar Biasa! Urutan logikamu sudah benar. Inilah yang disebut ALGORITMA.";
+            } else {
+                feedback.className = "mt-3 text-sm font-medium text-red-600 bg-red-50 p-3 rounded-lg border border-red-200";
+                feedback.innerHTML = "❌ Hmm, urutannya kurang logis. Coba bayangkan lagi kalau bikin mie, apakah bisa masukin bumbu sebelum direbus?";
+            }
+        }
+
+        function resetAlgorithm() {
+            userOrder = [];
+            document.getElementById('algo-feedback').classList.add('hidden');
+            renderSourceSteps();
+            renderTargetSteps();
+        }
+
+        // --- 2. Algoritma Luas Game Logic ---
+        const correctOrder2 = [
+            "INPUT panjang",
+            "INPUT lebar",
+            "luas = panjang * lebar",
+            "PRINT luas"
+        ];
+        
+        let shuffledSteps2 = [
+            "PRINT luas",
+            "INPUT panjang",
+            "luas = panjang * lebar",
+            "INPUT lebar"
+        ];
+        
+        let userOrder2 = [];
+
+        function renderSourceSteps2() {
+            const sourceContainer = document.getElementById('source-steps-2');
+            sourceContainer.innerHTML = '';
+            shuffledSteps2.forEach((step) => {
+                if (!userOrder2.includes(step)) {
+                    const btn = document.createElement('button');
+                    btn.className = "text-left w-full bg-white border border-slate-200 hover:border-teal-400 hover:shadow-md p-3 rounded-xl text-sm font-mono text-slate-700 transition cursor-pointer flex items-center gap-2 group";
+                    btn.innerHTML = `<span class="bg-slate-100 text-slate-400 group-hover:bg-teal-100 group-hover:text-teal-600 px-2 py-1 rounded text-xs transition">+</span> ${step}`;
+                    btn.onclick = () => selectStep2(step);
+                    sourceContainer.appendChild(btn);
+                }
+            });
+        }
+
+        function renderTargetSteps2() {
+            const targetContainer = document.getElementById('target-steps-2');
+            targetContainer.innerHTML = '';
+            if(userOrder2.length === 0) {
+                targetContainer.innerHTML = '<p id="empty-state-2" class="text-slate-400 text-center text-sm italic mt-4">Belum ada baris kode yang dipilih.</p>';
+            } else {
+                userOrder2.forEach((step, index) => {
+                    const div = document.createElement('div');
+                    div.className = "bg-teal-50 border border-teal-200 p-3 rounded-xl text-sm font-mono text-teal-900 flex justify-between items-center";
+                    div.innerHTML = `
+                        <div class="flex gap-3 items-center">
+                            <span class="font-bold text-teal-400">${index + 1}.</span> ${step}
+                        </div>
+                        <button onclick="removeStep2('${step}')" class="text-red-400 hover:text-red-600 text-xs px-2 py-1 rounded hover:bg-red-50 transition">✕</button>
+                    `;
+                    targetContainer.appendChild(div);
+                });
+            }
+        }
+
+        function selectStep2(step) {
+            userOrder2.push(step);
+            document.getElementById('algo-feedback-2').classList.add('hidden');
+            renderSourceSteps2();
+            renderTargetSteps2();
+        }
+
+        function removeStep2(stepToRemove) {
+            userOrder2 = userOrder2.filter(step => step !== stepToRemove);
+            document.getElementById('algo-feedback-2').classList.add('hidden');
+            renderSourceSteps2();
+            renderTargetSteps2();
+        }
+
+        function checkAlgorithm2() {
+            const feedback = document.getElementById('algo-feedback-2');
+            feedback.classList.remove('hidden');
+            
+            if (userOrder2.length !== correctOrder2.length) {
+                feedback.className = "mt-3 text-sm font-medium text-amber-600 bg-amber-50 p-3 rounded-lg border border-amber-200";
+                feedback.innerHTML = "⚠️ Lengkapi semua baris kode terlebih dahulu!";
+                return;
+            }
+
+            let isCorrect = true;
+            // Toleransi urutan input: INPUT panjang dan lebar bisa terbalik
+            if (!((userOrder2[0] === "INPUT panjang" && userOrder2[1] === "INPUT lebar") || 
+                  (userOrder2[0] === "INPUT lebar" && userOrder2[1] === "INPUT panjang"))) {
+                isCorrect = false;
+            }
+            if (userOrder2[2] !== "luas = panjang * lebar" || userOrder2[3] !== "PRINT luas") {
+                isCorrect = false;
+            }
+
+            if (isCorrect) {
+                feedback.className = "mt-3 text-sm font-medium text-green-700 bg-green-50 p-3 rounded-lg border border-green-200 flex items-center gap-2";
+                feedback.innerHTML = "🎉 Tepat Sekali! Komputer butuh INPUT data, baru bisa diproses, dan diakhiri dengan OUTPUT (PRINT).";
+            } else {
+                feedback.className = "mt-3 text-sm font-medium text-red-600 bg-red-50 p-3 rounded-lg border border-red-200";
+                feedback.innerHTML = "❌ Hmm, ingat alurnya: Kumpulkan data (INPUT), Lakukan perhitungan, lalu Tampilkan (PRINT).";
+            }
+        }
+
+        function resetAlgorithm2() {
+            userOrder2 = [];
+            document.getElementById('algo-feedback-2').classList.add('hidden');
+            renderSourceSteps2();
+            renderTargetSteps2();
+        }
+
+        // --- 3. Algoritma Kasir Game Logic ---
+        const correctOrder3 = [
+            "INPUT total_belanja",
+            "INPUT uang_bayar",
+            "IF uang_bayar < total_belanja THEN",
+            "PRINT \"Uang tidak cukup\"",
+            "ELSE",
+            "kembalian = uang_bayar - total_belanja",
+            "PRINT kembalian",
+            "ENDIF"
+        ];
+        
+        let shuffledSteps3 = [
+            "kembalian = uang_bayar - total_belanja",
+            "ENDIF",
+            "INPUT uang_bayar",
+            "ELSE",
+            "PRINT kembalian",
+            "PRINT \"Uang tidak cukup\"",
+            "IF uang_bayar < total_belanja THEN",
+            "INPUT total_belanja"
+        ];
+        
+        let userOrder3 = [];
+
+        function renderSourceSteps3() {
+            const sourceContainer = document.getElementById('source-steps-3');
+            sourceContainer.innerHTML = '';
+            shuffledSteps3.forEach((step) => {
+                if (!userOrder3.includes(step)) {
+                    const btn = document.createElement('button');
+                    btn.className = "text-left w-full bg-white border border-slate-200 hover:border-rose-400 hover:shadow-md p-2.5 rounded-xl text-xs font-mono text-slate-700 transition cursor-pointer flex items-center gap-2 group";
+                    btn.innerHTML = `<span class="bg-slate-100 text-slate-400 group-hover:bg-rose-100 group-hover:text-rose-600 px-2 py-1 rounded text-xs transition">+</span> ${step}`;
+                    btn.onclick = () => selectStep3(step);
+                    sourceContainer.appendChild(btn);
+                }
+            });
+        }
+
+        function renderTargetSteps3() {
+            const targetContainer = document.getElementById('target-steps-3');
+            targetContainer.innerHTML = '';
+            if(userOrder3.length === 0) {
+                targetContainer.innerHTML = '<p id="empty-state-3" class="text-slate-400 text-center text-sm italic mt-4">Belum ada baris kode yang dipilih.</p>';
+            } else {
+                userOrder3.forEach((step, index) => {
+                    const div = document.createElement('div');
+                    // Add indentation for inner blocks visually
+                    let indent = '';
+                    if (["PRINT \"Uang tidak cukup\"", "kembalian = uang_bayar - total_belanja", "PRINT kembalian"].includes(step)) {
+                        indent = 'ml-6 border-l-2 border-rose-300 pl-3';
+                    }
+                    div.className = `bg-rose-50 border border-rose-200 p-2.5 rounded-xl text-xs font-mono text-rose-900 flex justify-between items-center ${indent}`;
+                    div.innerHTML = `
+                        <div class="flex gap-2 items-center">
+                            <span class="font-bold text-rose-400">${index + 1}.</span> ${step}
+                        </div>
+                        <button onclick="removeStep3('${step}')" class="text-red-400 hover:text-red-600 text-xs px-2 py-1 rounded hover:bg-red-50 transition">✕</button>
+                    `;
+                    targetContainer.appendChild(div);
+                });
+            }
+        }
+
+        function selectStep3(step) {
+            userOrder3.push(step);
+            document.getElementById('algo-feedback-3').classList.add('hidden');
+            renderSourceSteps3();
+            renderTargetSteps3();
+        }
+
+        function removeStep3(stepToRemove) {
+            userOrder3 = userOrder3.filter(step => step !== stepToRemove);
+            document.getElementById('algo-feedback-3').classList.add('hidden');
+            renderSourceSteps3();
+            renderTargetSteps3();
+        }
+
+        function checkAlgorithm3() {
+            const feedback = document.getElementById('algo-feedback-3');
+            feedback.classList.remove('hidden');
+            
+            if (userOrder3.length !== correctOrder3.length) {
+                feedback.className = "mt-3 text-sm font-medium text-amber-600 bg-amber-50 p-3 rounded-lg border border-amber-200";
+                feedback.innerHTML = "⚠️ Masih ada kode yang belum dipakai. Susun semuanya!";
+                return;
+            }
+
+            let isCorrect = true;
+            for (let i = 0; i < correctOrder3.length; i++) {
+                // Ignore specific input order for first two lines
+                if (i < 2) {
+                    if (!((userOrder3[0] === "INPUT total_belanja" && userOrder3[1] === "INPUT uang_bayar") ||
+                          (userOrder3[0] === "INPUT uang_bayar" && userOrder3[1] === "INPUT total_belanja"))) {
+                        isCorrect = false; break;
+                    }
+                } else if (userOrder3[i] !== correctOrder3[i]) {
+                    isCorrect = false; break;
+                }
+            }
+
+            if (isCorrect) {
+                feedback.className = "mt-3 text-sm font-medium text-green-700 bg-green-50 p-3 rounded-lg border border-green-200 flex items-center gap-2";
+                feedback.innerHTML = "🎉 Sempurna! Logika kasirnya sudah jalan. Kamu berhasil menguasai IF-THEN-ELSE!";
+            } else {
+                feedback.className = "mt-3 text-sm font-medium text-red-600 bg-red-50 p-3 rounded-lg border border-red-200";
+                feedback.innerHTML = "❌ Susunannya belum tepat. Urutannya: Input Data -> Cek jika uang kurang (IF) -> Tolak -> Jika uang cukup (ELSE) -> Hitung Kembalian -> Tampilkan (PRINT) -> Selesai (ENDIF).";
+            }
+        }
+
+        function resetAlgorithm3() {
+            userOrder3 = [];
+            document.getElementById('algo-feedback-3').classList.add('hidden');
+            renderSourceSteps3();
+            renderTargetSteps3();
+        }
+
+        // --- Tab Switching Logic ---
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active', 'border-b-2', 'border-blue-500', 'text-blue-600', 'font-semibold'));
+            
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            event.currentTarget.classList.add('active', 'border-b-2', 'border-blue-500', 'text-blue-600', 'font-semibold');
+        }
+
+        // --- Quiz Logic ---
+        const quizData = [
+            {
+                question: "1. Manakah di bawah ini yang merupakan pengertian terbaik dari Algoritma?",
+                options: [
+                    "Bahasa yang digunakan untuk membuat tampilan website",
+                    "Urutan langkah-langkah yang logis dan runtut untuk memecahkan masalah",
+                    "Komponen perangkat keras pada komputer",
+                    "Kode palsu yang tidak bisa dijalankan"
+                ],
+                correct: 1
+            },
+            {
+                question: "2. Mengapa programmer sering menulis Pseudocode sebelum mulai mengoding?",
+                options: [
+                    "Agar program terlihat lebih keren",
+                    "Agar komputer bisa mengeksekusinya lebih cepat",
+                    "Untuk fokus menyusun logika tanpa perlu memikirkan sintaks atau aturan bahasa pemrograman yang rumit",
+                    "Sebagai pengganti buku panduan"
+                ],
+                correct: 2
+            },
+            {
+                question: "3. Dalam pseudocode, jika kamu ingin menampilkan hasil perhitungan ke layar, kata kunci apa yang biasa digunakan?",
+                options: ["INPUT", "IF", "ENDIF", "PRINT / OUTPUT"],
+                correct: 3
+            }
+        ];
+
+        let currentQuestion = 0;
+        let hasAnswered = false;
+
+        function loadQuiz() {
+            const q = quizData[currentQuestion];
+            document.getElementById('quiz-question').textContent = q.question;
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+            
+            q.options.forEach((opt, index) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-xl border border-slate-200 hover:border-emerald-400 hover:bg-emerald-50 transition duration-200";
+                btn.textContent = String.fromCharCode(65 + index) + ". " + opt;
+                btn.onclick = () => selectAnswer(index, btn);
+                optionsContainer.appendChild(btn);
+            });
+
+            document.getElementById('quiz-feedback').classList.add('hidden');
+            document.getElementById('next-btn').classList.add('hidden');
+            hasAnswered = false;
+        }
+
+        function selectAnswer(index, btnElement) {
+            if (hasAnswered) return;
+            hasAnswered = true;
+
+            const q = quizData[currentQuestion];
+            const feedback = document.getElementById('quiz-feedback');
+            const allBtns = document.getElementById('quiz-options').children;
+            
+            for(let i=0; i<allBtns.length; i++){
+                allBtns[i].classList.add('opacity-50');
+                if(i === q.correct) {
+                    allBtns[i].classList.remove('opacity-50');
+                    allBtns[i].classList.add('bg-green-100', 'border-green-400', 'text-green-800', 'font-semibold');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+            if (index === q.correct) {
+                feedback.className = "mt-6 p-4 rounded-xl font-medium text-sm bg-green-100 text-green-800 border border-green-200";
+                feedback.innerHTML = "✅ Benar! Pemahamanmu mantap.";
+            } else {
+                btnElement.classList.remove('opacity-50');
+                btnElement.classList.add('bg-red-100', 'border-red-400', 'text-red-800');
+                feedback.className = "mt-6 p-4 rounded-xl font-medium text-sm bg-red-100 text-red-800 border border-red-200";
+                feedback.innerHTML = "❌ Kurang tepat. Coba perhatikan kembali materi di atas.";
+            }
+
+            if (currentQuestion < quizData.length - 1) {
+                document.getElementById('next-btn').classList.remove('hidden');
+                document.getElementById('next-btn').textContent = "Selanjutnya ➔";
+            } else {
+                document.getElementById('next-btn').classList.remove('hidden');
+                document.getElementById('next-btn').textContent = "Selesaikan Pembelajaran 🌟";
+                document.getElementById('next-btn').onclick = () => {
+                    document.getElementById('quiz-container').innerHTML = `
+                        <div class="text-center py-8">
+                            <div class="text-6xl mb-4">🏆</div>
+                            <h3 class="text-2xl font-bold text-slate-800 mb-2">Selamat!</h3>
+                            <p class="text-slate-600">Kamu telah menyelesaikan pembelajaran dasar Algoritma & Pseudocode.</p>
+                            <button onclick="location.reload()" class="mt-6 bg-slate-800 text-white px-6 py-2 rounded-lg hover:bg-slate-700 transition">Ulangi Modul</button>
+                        </div>
+                    `;
+                };
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            loadQuiz();
+        }
+
+        // --- Initialization on window load ---
+        window.onload = () => {
+            renderSourceSteps();
+            renderTargetSteps();
+            
+            renderSourceSteps2();
+            renderTargetSteps2();
+            
+            renderSourceSteps3();
+            renderTargetSteps3();
+            
+            loadQuiz();
+        };
+    </script>
+</body>
+</html>
